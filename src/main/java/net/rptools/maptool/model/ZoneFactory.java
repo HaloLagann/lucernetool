@@ -33,12 +33,12 @@ public class ZoneFactory {
   static {
     // TODO: I really don't like this being hard wired this way, need to make it a preference or
     // something
-    File grassImage =
-        new File(AppUtil.getAppHome("resource/Default/Textures").getAbsolutePath() + "/Grass.png");
-    if (grassImage.exists()) {
+    File blackImage =
+        new File(AppUtil.getAppHome("resource/Default/Textures").getAbsolutePath() + "/Black.png");
+    if (blackImage.exists()) {
       try {
         Asset asset =
-            Asset.createImageAsset(DEFAULT_MAP_NAME, FileUtils.readFileToByteArray(grassImage));
+            Asset.createImageAsset(DEFAULT_MAP_NAME, FileUtils.readFileToByteArray(blackImage));
         defaultImageId = asset.getMD5Key();
 
         // Make sure the image is loaded to avoid a flash screen when it becomes visible

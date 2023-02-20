@@ -140,7 +140,6 @@ public class PreferencesDialog extends JDialog {
   private final JCheckBox fitGMView;
   private final JCheckBox fillSelectionCheckBox;
   private final JTextField frameRateCapTextField;
-
   private final JComboBox<LocalizedComboItem> renderPerformanceComboBox;
   private final JTextField defaultUsername;
 
@@ -170,8 +169,6 @@ public class PreferencesDialog extends JDialog {
 
   private final ListModel<String> darkThemesListModel;
   private final JComboBox<LocalizedComboItem> themeFilterCombo;
-
-  private final JCheckBox useThemeForChat;
 
   // Startup
   private final JTextField jvmXmxTextField;
@@ -388,7 +385,6 @@ public class PreferencesDialog extends JDialog {
     themeList = (JList<String>) panel.getList("themeList");
     themeImageLabel = (JLabel) panel.getComponent("themeImage");
     themeNameLabel = (JLabel) panel.getComponent("currentThemeName");
-    useThemeForChat = (JCheckBox) panel.getComponent("useThemeForChat");
     themeFilterCombo = panel.getComboBox("themeFilterCombo");
 
     jvmXmxTextField = panel.getTextField("jvmXmxTextField");
@@ -1207,11 +1203,6 @@ public class PreferencesDialog extends JDialog {
           }
         });
     themeNameLabel.setText(ThemeSupport.getThemeName());
-    useThemeForChat.setSelected(ThemeSupport.shouldUseThemeColorsForChat());
-    useThemeForChat.addActionListener(
-        l -> {
-          ThemeSupport.setUseThemeColorsForChat(useThemeForChat.isSelected());
-        });
   }
 
   /** Utility method to create and set the selected item for LocalizedComboItem combo box models. */

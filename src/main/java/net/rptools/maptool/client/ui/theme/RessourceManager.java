@@ -30,6 +30,7 @@ import org.javatuples.Triplet;
 public class RessourceManager {
   private static final String IMAGE_DIR = "net/rptools/maptool/client/image/";
   private static final String ICON_DIR = "net/rptools/maptool/client/icons/";
+  private static final String STATE_DIR = "net/rptools/maptool/client/image/icons";
   private static final HashMap<Icons, String> classicIcons =
       new HashMap<>() {
         {
@@ -235,7 +236,7 @@ public class RessourceManager {
           put(Images.DECORATION_RPTOK, IMAGE_DIR + "rptokIcon.png");
           put(Images.EMPTY, IMAGE_DIR + "empty.png");
           put(Images.GRID_BORDER_HEX, IMAGE_DIR + "hexBorder.png");
-          put(Images.GRID_BORDER_ISOMETRIC, IMAGE_DIR + "hexBorder.png");
+          put(Images.GRID_BORDER_ISOMETRIC, IMAGE_DIR + "isoBorder.png");
           put(Images.GRID_BORDER_SQUARE, IMAGE_DIR + "whiteBorder.png");
           put(Images.GRID_BORDER_SQUARE_RED, IMAGE_DIR + "grid-square-red.png");
           put(Images.HEROLABS_PORTRAIT, IMAGE_DIR + "powered_by_hero_lab_small.png");
@@ -255,6 +256,83 @@ public class RessourceManager {
           put(Images.ZONE_RENDERER_BLOCK_MOVE, IMAGE_DIR + "block_move.png");
           put(Images.ZONE_RENDERER_CELL_WAYPOINT, IMAGE_DIR + "redDot.png");
           put(Images.ZONE_RENDERER_STACK_IMAGE, IMAGE_DIR + "stack.png");
+        }
+      };
+
+  private static final HashMap<StateIcons, String> states =
+      new HashMap<>() {
+        {
+          put(StateIcons.BLINDED, STATE_DIR + "blindicon.png");
+          put(StateIcons.BURNING, STATE_DIR + "");
+          put(StateIcons.CHARMED, STATE_DIR + "");
+          put(StateIcons.CONCENTRATING, STATE_DIR + "");
+          put(StateIcons.DEAD, STATE_DIR + "");
+          put(StateIcons.DEAFENED, STATE_DIR + "Deafenedicon.png");
+          put(StateIcons.EXHAUST1, STATE_DIR + "EX1.png");
+          put(StateIcons.EXHAUST2, STATE_DIR + "EX2.png");
+          put(StateIcons.EXHAUST3, STATE_DIR + "EX3.png");
+          put(StateIcons.EXHAUST4, STATE_DIR + "EX4.png");
+          put(StateIcons.EXHAUST5, STATE_DIR + "EX5.png");
+          put(StateIcons.EXHAUST6, STATE_DIR + "EX6.png");
+          put(StateIcons.FRIGHTENED, STATE_DIR + "Frightenedicon.png");
+          put(StateIcons.GRAPPLED, STATE_DIR + "Grappledicon.png");
+          put(StateIcons.HIDDEN, STATE_DIR + "Hiddenicon.png");
+          put(StateIcons.INCAPACITATED, STATE_DIR + "Incapacitated.png");
+          put(StateIcons.INVISIBLE, STATE_DIR + "Invisibleicon.png");
+          put(StateIcons.LANGUISHED, STATE_DIR + "Languishedicon.png");
+          put(StateIcons.PARALYZED, STATE_DIR + "Paralysisicon.png");
+          put(StateIcons.PETRIFIED, STATE_DIR + "Petrifyicon.png");
+          put(StateIcons.POISONED, STATE_DIR + "poisonedicon.png");
+          put(StateIcons.PRONE, STATE_DIR + "proneicon.png");
+          put(StateIcons.RESTRAINED, STATE_DIR + "restrainedicon.png");
+          put(StateIcons.RUINED, STATE_DIR + "ruinedicon.png");
+          put(StateIcons.SHOCKED, STATE_DIR + "shockedicon.png");
+          put(StateIcons.STAGGERED, STATE_DIR + "Staggeredicon.png");
+          put(StateIcons.STUNNED, STATE_DIR + "Stunnedicon.png");
+          put(StateIcons.TAUNTED, STATE_DIR + "Tauntedicon.png");
+          put(StateIcons.UNCONSCIOUS, STATE_DIR + "Unconscious.png");
+          put(StateIcons.WITHERED, STATE_DIR + "Witheredpng.png");
+          put(StateIcons.ZERO, STATE_DIR + "Elevation/_0.png");
+          put(StateIcons.ZEROT, STATE_DIR + "Elevation/_0f.png");
+          put(StateIcons.ONE, STATE_DIR + "Elevation/_1.png");
+          put(StateIcons.ONET, STATE_DIR + "Elevation/_1f.png");
+          put(StateIcons.ONEH, STATE_DIR + "Elevation/_1h.png");
+          put(StateIcons.TWO, STATE_DIR + "Elevation/_2.png");
+          put(StateIcons.TWOT, STATE_DIR + "Elevation/_2f.png");
+          put(StateIcons.TWOH, STATE_DIR + "Elevation/_2h.png");
+          put(StateIcons.THREE, STATE_DIR + "Elevation/_3.png");
+          put(StateIcons.THREET, STATE_DIR + "Elevation/_3f.png");
+          put(StateIcons.THREEH, STATE_DIR + "Elevation/_3h.png");
+          put(StateIcons.FOUR, STATE_DIR + "Elevation/_4.png");
+          put(StateIcons.FOURT, STATE_DIR + "Elevation/_4f.png");
+          put(StateIcons.FOURH, STATE_DIR + "Elevation/_4h.png");
+          put(StateIcons.FIVE, STATE_DIR + "Elevation/_5.png");
+          put(StateIcons.FIVET, STATE_DIR + "Elevation/_5f.png");
+          put(StateIcons.FIVEH, STATE_DIR + "Elevation/_5h.png");
+          put(StateIcons.SIX, STATE_DIR + "Elevation/_6.png");
+          put(StateIcons.SIXT, STATE_DIR + "Elevation/_6f.png");
+          put(StateIcons.SIXH, STATE_DIR + "Elevation/_6h.png");
+          put(StateIcons.SEVEN, STATE_DIR + "Elevation/_7.png");
+          put(StateIcons.SEVENT, STATE_DIR + "Elevation/_7f.png");
+          put(StateIcons.SEVENH, STATE_DIR + "Elevation/_7h.png");
+          put(StateIcons.EIGHT, STATE_DIR + "Elevation/_8.png");
+          put(StateIcons.EIGHTT, STATE_DIR + "Elevation/_8f.png");
+          put(StateIcons.EIGHTH, STATE_DIR + "Elevation/_8h.png");
+          put(StateIcons.NINE, STATE_DIR + "Elevation/_9.png");
+          put(StateIcons.NINET, STATE_DIR + "Elevation/_9f.png");
+          put(StateIcons.NINEH, STATE_DIR + "Elevation/_9h.png");
+        }
+      };
+
+  private static final HashMap<BarImages, String> bars =
+      new HashMap<>() {
+        {
+          put(BarImages.HEALTH, IMAGE_DIR + "healthbar.png");
+          put(BarImages.HEALTHBASE, IMAGE_DIR + "healthbarbackground.png");
+          put(BarImages.WARD, IMAGE_DIR + "wardbar.png");
+          put(BarImages.WARDBASE, IMAGE_DIR + "wardbarbackground.png");
+          put(BarImages.TORPOR, IMAGE_DIR + "torporbar.png");
+          put(BarImages.TORPORBASE, IMAGE_DIR + "torporbarbackground.png");
         }
       };
 

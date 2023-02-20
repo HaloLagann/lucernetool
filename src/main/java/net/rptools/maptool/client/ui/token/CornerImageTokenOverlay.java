@@ -48,6 +48,10 @@ public class CornerImageTokenOverlay extends ImageTokenOverlay {
     corner = aCorner;
   }
 
+  public CornerImageTokenOverlay(String name, MD5Key anAssetId) {
+    super(name, anAssetId);
+  }
+
   /** @see BooleanTokenOverlay#clone() */
   @Override
   public Object clone() {

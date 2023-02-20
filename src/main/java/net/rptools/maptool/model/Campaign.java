@@ -52,7 +52,7 @@ import net.rptools.maptool.server.proto.CampaignDto;
  */
 public class Campaign {
   /** The only built-in property type is "Basic". Any others are user-defined. */
-  public static final String DEFAULT_TOKEN_PROPERTY_TYPE = "Basic";
+  public static final String DEFAULT_TOKEN_PROPERTY_TYPE = "NPC";
 
   private GUID id = new GUID();
 

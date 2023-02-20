@@ -49,7 +49,8 @@ public class CreateVersionedInstallSplash extends Application {
   private static String resourceImage = null;
   private static String webOutputPath;
   private static String versionText = "Dev-Build";
-  private static final String FONT_RESOURCE = "/net/rptools/maptool/client/fonts/Horta.ttf";
+  private static final String FONT_RESOURCE =
+      "/net/rptools/maptool/client/fonts/Brother-1816-Regular.ttf";
   private static Font versionFont;
 
   public static void main(String[] args) {
@@ -105,15 +106,15 @@ public class CreateVersionedInstallSplash extends Application {
       splashIcon =
           new ImageIcon(SplashScreen.class.getClassLoader().getResource(resourceImage)).getImage();
     }
-    final Color versionColor = Color.rgb(3, 78, 149, 1); // Color.rgb(27, 85, 139, 1)
+    final Color versionColor = Color.rgb(230, 230, 230, 1); // Color.rgb(27, 85, 139, 1)
 
-    final int imgWidth = 490;
-    final int imgHeight = 290;
-    final int versionTextX = 48;
-    final int versionTextY = 37;
+    final int imgWidth = 500;
+    final int imgHeight = 250;
+    final int versionTextX = 10;
+    final int versionTextY = 55;
 
     InputStream is = SplashScreen.class.getResourceAsStream(FONT_RESOURCE);
-    versionFont = Font.loadFont(is, 28);
+    versionFont = Font.loadFont(is, 14);
 
     BufferedImage buffImage = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_INT_ARGB);
     Graphics2D g2d = buffImage.createGraphics();
@@ -124,11 +125,6 @@ public class CreateVersionedInstallSplash extends Application {
     g2d.setRenderingHints(rh);
     g2d.drawImage(splashIcon, 0, 0, null);
 
-    // Adding glow twice to make it more pronounced...
-    g2d.drawImage(
-        textToImage(versionText, Color.WHITESMOKE, 28, true), versionTextX, versionTextY, null);
-    g2d.drawImage(
-        textToImage(versionText, Color.WHITESMOKE, 28, true), versionTextX, versionTextY, null);
     g2d.drawImage(
         textToImage(versionText, versionColor, 28, false), versionTextX, versionTextY, null);
     g2d.dispose();

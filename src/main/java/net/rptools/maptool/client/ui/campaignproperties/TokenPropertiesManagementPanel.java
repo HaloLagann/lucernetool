@@ -133,7 +133,10 @@ public class TokenPropertiesManagementPanel extends AbeillePanel<CampaignPropert
     editingType = type;
 
     getTokenTypeName().setText(type != null ? type : "");
-    getTokenTypeName().setEditable(!CampaignProperties.DEFAULT_TOKEN_PROPERTY_TYPE.equals(type));
+    boolean edit =
+        CampaignProperties.DEFAULT_TOKEN_PROPERTY_TYPE.equals(type)
+            || CampaignProperties.DEFAULT_PC_TOKEN_PROPERTY_TYPE.equals(type);
+    getTokenTypeName().setEditable(!edit);
     getTokenPropertiesArea()
         .setText(type != null ? compileTokenProperties(tokenTypeMap.get(type)) : "");
   }

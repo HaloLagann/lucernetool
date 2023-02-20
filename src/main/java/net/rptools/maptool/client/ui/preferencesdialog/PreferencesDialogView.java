@@ -814,13 +814,6 @@ public class PreferencesDialogView {
         label75.setName("themeImage");
         label75.setText("");
         panel24.add(label75, new GridConstraints(0, 3, 6, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-        final JLabel label76 = new JLabel();
-        this.$$$loadLabelText$$$(label76, this.$$$getMessageFromBundle$$$("net/rptools/maptool/language/i18n", "Label.useThemeForChat"));
-        panel24.add(label76, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-        final JCheckBox checkBox42 = new JCheckBox();
-        checkBox42.setName("useThemeForChat");
-        checkBox42.setText("");
-        panel24.add(checkBox42, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         final JLabel label77 = new JLabel();
         this.$$$loadLabelText$$$(label77, this.$$$getMessageFromBundle$$$("net/rptools/maptool/language/i18n", "Label.theme.macroeditor"));
         label77.setToolTipText(this.$$$getMessageFromBundle$$$("net/rptools/maptool/language/i18n", "Preferences.label.macroeditor.tooltip"));

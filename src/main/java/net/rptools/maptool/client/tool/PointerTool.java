@@ -99,8 +99,8 @@ public class PointerTool extends DefaultTool {
   private BufferedImage statSheet;
   private Token tokenOnStatSheet;
 
-  private static int PADDING = 7;
-  private static int STATSHEET_EXTERIOR_PADDING = 5;
+  private static int PADDING = 5;
+  private static int STATSHEET_EXTERIOR_PADDING = -2;
 
   // Offset from token's X,Y when dragging. Values are in zone coordinates.
   private int dragOffsetX = 0;
@@ -1711,8 +1711,7 @@ public class PointerTool extends DefaultTool {
                   portraitId,
                   (img, infoflags, x, y, width, height) -> {
                     // The image was loading, so now rebuild the portrait panel with the
-                    // real
-                    // image
+                    // real image
                     statSheet = null;
                     renderer.repaint();
                     return true;
@@ -1737,7 +1736,7 @@ public class PointerTool extends DefaultTool {
                 - rm * 2
                 - imgSize.width
                 - PADDING * 3
-                - STATSHEET_EXTERIOR_PADDING * 2;
+                - STATSHEET_EXTERIOR_PADDING * -2;
         Map<String, String> propertyMap = new LinkedHashMap<String, String>();
         Map<String, Integer> propertyLineCount = new LinkedHashMap<String, Integer>();
         LinkedList<TextLayout> lineLayouts = new LinkedList<TextLayout>();
@@ -1798,8 +1797,7 @@ public class PointerTool extends DefaultTool {
             }
             layoutWidth = Math.max(1, maxStatsWidth - keyWidth);
             // Iterate over values, break them into lines as necessary. Figure out
-            // longest value
-            // length.
+            // longest value length.
             for (Entry<String, String> entry : propertyMap.entrySet()) {
               int lineCount = 0;
               for (String line : entry.getValue().split("\n")) {
@@ -1870,13 +1868,15 @@ public class PointerTool extends DefaultTool {
             int y = bounds.y + rowHeight;
             for (Entry<String, String> entry : propertyMap.entrySet()) {
               // Box
-              statsG.setColor(new Color(249, 241, 230, 140));
+              // statsG.setColor(new Color(249, 241, 230, 140));
+              statsG.setColor(new Color(55, 55, 55, 140));
               statsG.fillRect(
                   bounds.x,
                   y - keyFM.getAscent(),
-                  bounds.width - PADDING / 2,
+                  bounds.width,
                   rowHeight * propertyLineCount.get(entry.getKey()));
-              statsG.setColor(new Color(175, 163, 149));
+              // statsG.setColor(new Color(175, 163, 149));
+              statsG.setColor(new Color(0, 163, 0, 0));
               statsG.drawRect(
                   bounds.x,
                   y - keyFM.getAscent(),
@@ -1884,7 +1884,7 @@ public class PointerTool extends DefaultTool {
                   rowHeight * propertyLineCount.get(entry.getKey()));
 
               // Draw Key
-              statsG.setColor(Color.black);
+              statsG.setColor(Color.white);
               statsG.setFont(boldFont);
               statsG.drawString(entry.getKey(), bounds.x + PADDING * 2, y);
 
